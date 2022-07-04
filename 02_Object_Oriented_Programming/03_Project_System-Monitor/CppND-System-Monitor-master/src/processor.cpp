@@ -7,9 +7,7 @@ using std::string;
 using std::vector;
 
 float Processor::Utilization() { 
-    
-    long total = LinuxParser::Jiffies();
-    long active = LinuxParser::ActiveJiffies();
-
-    return active * (1.f / total);
+    vector<string> values = LinuxParser::CpuUtilization();
+    // Sum of active time units / sum of total time units
+    return (float)(0.0);
 }

@@ -17,17 +17,11 @@ using std::vector;
 Processor& System::Cpu() { return cpu_; }
 
 vector<Process>& System::Processes() { 
-    vector<Process> processes{};
-    vector<int> processIDs = LinuxParser::Pids();
-    for(int i : processIDs)
-    {
-        Process p{i};
-        processes.push_back(p);
+    const vector <int>& pids = LinuxParser::Pids();
+    for(const int& pid: pids){
+        processes_.emplace_back(pid);
     }
-
-    processes_ = processes;
-
-    return processes_; 
+    return processes_;
 }
 
 std::string System::Kernel() { return LinuxParser::Kernel(); }
