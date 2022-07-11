@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\git\Udacity\01_CPP_Nanodegree\05_Capstone\CppND-Capstone-Snake-Game-master\build\CMakeFiles\1c3393a6c0ae3a5d9fcc1665d8e3be38\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{AC3F356C-5AC3-32E1-965F-BF62EF2F0A05}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

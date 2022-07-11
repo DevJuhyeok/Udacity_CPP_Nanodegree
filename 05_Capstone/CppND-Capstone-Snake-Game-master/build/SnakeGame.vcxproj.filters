@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\git\Udacity\01_CPP_Nanodegree\05_Capstone\CppND-Capstone-Snake-Game-master\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\git\Udacity\01_CPP_Nanodegree\05_Capstone\CppND-Capstone-Snake-Game-master\src\game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\git\Udacity\01_CPP_Nanodegree\05_Capstone\CppND-Capstone-Snake-Game-master\src\controller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\git\Udacity\01_CPP_Nanodegree\05_Capstone\CppND-Capstone-Snake-Game-master\src\renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\git\Udacity\01_CPP_Nanodegree\05_Capstone\CppND-Capstone-Snake-Game-master\src\snake.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\git\Udacity\01_CPP_Nanodegree\05_Capstone\CppND-Capstone-Snake-Game-master\src\player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\git\Udacity\01_CPP_Nanodegree\05_Capstone\CppND-Capstone-Snake-Game-master\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{39D81985-5121-3CB7-AFA9-DEDC86F1881A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
