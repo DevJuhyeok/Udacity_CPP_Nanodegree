@@ -2,9 +2,9 @@
 
 Player::Player()
 {
-    _name = "Unkown Player";
-    _score = 0;
+    _name = "NoName";
     _level = 0;
+    _score = 0;
 }
 
 Player::~Player()
@@ -65,4 +65,58 @@ void Player::GetPlayer()
     }
 
     SetLevel(startingLevel);
+}
+
+Player::Player(const Player &source)
+{
+    // 2 : copy constructor
+
+    // copy member variables
+    _name = source._name;
+    _level = source._level;
+    _score = source._score;
+}
+
+Player &Player::operator=(const Player &source)
+{
+    // 3 : copy assignment operator
+    if(this == &source){
+        return *this;
+    }
+
+    // copy member variables
+    _name = source._name;
+    _level = source._level;
+    _score = source._score;
+    return *this;
+}
+
+Player::Player(Player &&source)
+{
+    // 4 : move constructor
+    _name = source._name;
+    _level = source._level;
+    _score = source._score;
+
+    source._name = nullptr;
+    source._level = 0;
+    source._score = 0;
+}
+
+Player &Player::operator=(Player &&source)
+{
+    // 5 : move assignment operator
+    
+    // exception
+    if(this == &source){
+        return *this;
+    }
+
+    _name = source._name;
+    _level = source._level;
+    _score = source._score;
+
+    source._name = nullptr;
+    source._level = 0;
+    source._score = 0;
 }

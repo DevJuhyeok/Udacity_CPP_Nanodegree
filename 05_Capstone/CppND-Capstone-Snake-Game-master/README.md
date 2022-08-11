@@ -44,3 +44,25 @@ This work is licensed under a
 [cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
 [cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
 [cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
+
+## Rubric of Project
+
+README is completed!
+Compiling and Testing is done.
+
+* Loops, Functtions, I/O
+1. The project reads data from a file and process the data, or the program writes data to a file.
+  * main.cpp 33 line : It read winner data from winner.txt and write data to txt file.
+2. The project accepts user input and processes the input.
+  * main.cpp 17 line / player.cpp 45 line : It receive user input to get current player and it will be uesd for starting speed and deciding winner.
+
+* Object Oriented Programming
+1. The project uses Object Oriented Programming techniques.
+2. Classes use appropriate access specifiers for class members.
+  * player.h / player.cpp : I create a Player class to save user data. And it include private and public member variables and functions.
+3. Class constructors utilize member initialization lists.
+  * player.h 12 line : I defined member initialization lists.
+
+* Memory Management
+1. The project follows the Rule of 5.
+  * player.h 25 line / player.cpp 70 line : It is satisfied for the rule of 5.

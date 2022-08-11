@@ -21,7 +21,7 @@ private:
 
     // data handles (not owned)
     std::vector<GraphEdge *> _parentEdges; // edges to preceding nodes 
-    ChatBot _chatBot; // delete pointer
+    ChatBot _chatBot;
 
     ////
     //// EOF STUDENT CODE

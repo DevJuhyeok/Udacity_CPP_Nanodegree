@@ -222,10 +222,10 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
     }
 
     // Task 5 : create local chatbot
-    ChatBot localchatbot("../images/chatbot.png");
-    localchatbot.SetChatLogicHandle(this); // _chatLogic = chatLogic
-    localchatbot.SetRootNode(rootNode); // _rootNode = rootNode;
-    rootNode->MoveChatbotHere(std::move(localchatbot));    
+    ChatBot chatbot("../images/chatbot.png");
+    chatbot.SetChatLogicHandle(this);
+    chatbot.SetRootNode(rootNode);
+    rootNode->MoveChatbotHere(std::move(chatbot));    
     ////
     //// EOF STUDENT CODE
 }

@@ -2,11 +2,12 @@
 #include <iostream>
 #include "SDL.h"
 
-Game::Game(std::size_t grid_width, std::size_t grid_height)
+Game::Game(Player player, std::size_t grid_width, std::size_t grid_height)
     : snake(grid_width, grid_height),
       engine(dev()),
       random_w(0, static_cast<int>(grid_width - 1)),
-      random_h(0, static_cast<int>(grid_height - 1)) {
+      random_h(0, static_cast<int>(grid_height - 1)),
+      player(player) {
   PlaceFood();
 }
 
@@ -23,6 +24,7 @@ void Game::Run(Controller const &controller, Renderer &renderer,
     frame_start = SDL_GetTicks();
 
     // Input, Update, Render - the main game loop.
+    snake.speed = SetSpeed();
     controller.HandleInput(running, snake);
     Update();
     renderer.Render(snake, food);
@@ -36,7 +38,7 @@ void Game::Run(Controller const &controller, Renderer &renderer,
 
     // After every second, update the window title.
     if (frame_end - title_timestamp >= 1000) {
-      renderer.UpdateWindowTitle(score, frame_count);
+      renderer.UpdateWindowTitle(score, frame_count, player.GetName());
       frame_count = 0;
       title_timestamp = frame_end;
     }
@@ -75,13 +77,48 @@ void Game::Update() {
 
   // Check if there's food over here
   if (food.x == new_x && food.y == new_y) {
-    score++;
+    score = score + player.GetLevel();
+    eat++;
     PlaceFood();
     // Grow snake and increase speed.
     snake.GrowBody();
-    snake.speed += 0.02;
+    //snake.speed += 0.02;
+    snake.speed = SetSpeed();
+    
+    SetLevel();
+    player.SetScore(GetScore());
   }
 }
 
 int Game::GetScore() const { return score; }
 int Game::GetSize() const { return snake.size; }
+
+void Game::SetLevel()
+{
+  int level = player.GetLevel();
+
+  if(eat > 10)
+  {
+    level++;
+    eat = 0;
+  }
+
+  player.SetLevel(level);
+}
+
+float Game::ConvertLevelToSpeed(int level)
+{
+  return (0.1 + (float)(level)*0.05);
+}
+
+float Game::SetSpeed()
+{
+  int level = player.GetLevel();
+  return ConvertLevelToSpeed(level);
+}
+
+Player Game::GetPlayer()
+{
+  Player retPlayer(player);
+  return retPlayer;
+}

@@ -17,10 +17,10 @@ private:
     //// STUDENT CODE
     ////
 
-    // use smart pointer, change data structure and codes..
+	// use smart pointer, change data structure and codes..
     // I used unique_ptr for smart pointer. it is automatically delete after using memory
     std::unique_ptr<ChatLogic> _chatLogic;
-    
+
     ////
     //// EOF STUDENT CODE
 
@@ -30,7 +30,6 @@ public:
     ~ChatBotPanelDialog();
 
     // getter / setter
-    // because of using smart pointer , return value using get() in memory.h
     ChatLogic *GetChatLogicHandle() { return _chatLogic.get(); }
 
     // events
